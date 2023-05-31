@@ -1,4 +1,4 @@
-<div align="center"> <a href="https://gitee.com/zhanglp520/quick-admin.git"> <img alt="quick-admin Logo" width="200" height="200" src="./public/images/logo.png"> </a> <br> <br>
+<div align="center"> <a href="https://gitee.com/zhanglp520/quick-admin.git"> <img alt="quick-admin Logo" width="200" height="200" src="https://raw.githubusercontent.com/wiki/zhanglp520/quick-admin/logo.png"> </a> <br> <br>
 </div>
 
 **中文** | [英文](./README.en.md)
