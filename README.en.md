@@ -289,4 +289,4 @@ Pnpm run preview
 
 If you feel that this project is helpful to you, you can help the author buy a cup of coffee to show your support!
 
-! [Donate]（ https://raw.githubusercontent.com/wiki/zhanglp520/quick-admin/20230430121236.png ）
+  ![donate](https://raw.githubusercontent.com/wiki/zhanglp520/quick-admin/20230430121236.png)
