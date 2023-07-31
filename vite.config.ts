@@ -17,22 +17,22 @@ export default (setting: any) => {
       createHtmlPlugin({
         inject: {
           data: {
-            title: VITE_APP_TITLE
-          }
-        }
-      })
+            title: VITE_APP_TITLE,
+          },
+        },
+      }),
     ],
     resolve: {
       alias: [
         {
           find: '@',
-          replacement: fileURLToPath(new URL('./src', import.meta.url))
+          replacement: fileURLToPath(new URL('./src', import.meta.url)),
         },
         {
           find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
-        }
-      ]
+          replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
+        },
+      ],
     },
     server: {
       https: false, // 运行服务是否以https方式
@@ -41,14 +41,14 @@ export default (setting: any) => {
       open: true,
       proxy: {
         [VITE_APP_BASE_URL]: {
-          target: 'http://localhost:3103/', // 代理的目标地址-本地
-          // target: 'https://api.quick.ainiteam.com/', // 代理的目标地址-线上
+          // target: 'http://localhost:3103/', // 代理的目标地址-本地
+          target: 'https://api.quick.ainiteam.com/', // 代理的目标地址-线上
           changeOrigin: true, // 开发模式，默认的origin是真实的 origin:localhost:3102 代理服务会把origin修改为目标地址
           secure: true, // 是否https接
           ws: false, // 是否代理websockets
-          rewrite: (path: string) => path.replace(/^\/dev-api/, '') // 路径重写
-        }
-      }
+          rewrite: (path: string) => path.replace(/^\/dev-api/, ''), // 路径重写
+        },
+      },
     },
     preview: {
       https: false, // 运行服务是否以https方式
@@ -62,9 +62,9 @@ export default (setting: any) => {
           changeOrigin: true, // 开发模式，默认的origin是真实的 origin:localhost:3000 代理服务会把origin修改为目标地址
           secure: false, // 是否https接口
           ws: false, // 是否代理websockets
-          rewrite: (path: string) => path.replace(/^\/prod-api/, '') // 路径重写
-        }
-      }
-    }
+          rewrite: (path: string) => path.replace(/^\/prod-api/, ''), // 路径重写
+        },
+      },
+    },
   }
 }

@@ -50,11 +50,6 @@ const tableToolbar = reactive<Toolbar>({
 /**
  * 操作栏
  */
-const handleEdit = (form: Dept, done: any) => {
-  const model = { ...form }
-  model.pId = model.pId.toString()
-  done(model)
-}
 const handleDelete = (item: Dept, done: any) => {
   ElMessageBox.confirm(`你真的删除【${item.deptName}】的部门吗？`, '警告', {
     confirmButtonText: '确定',
@@ -279,7 +274,6 @@ const handleFormSubmit = (form: Dept, done: any) => {
     :left-tree="leftTree"
     :left-tree-refresh="true"
     :loading="loading"
-    @on-edit="handleEdit"
     @on-tree-load="treeLoad"
     @on-tree-click="handleTreeClick"
     @on-form-submit="handleFormSubmit"

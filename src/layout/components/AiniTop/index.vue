@@ -9,6 +9,7 @@ import { useMenuStore } from '@/store/modules/menu'
 import { useTabStore } from '@/store/modules/tab'
 import QuickBreadcrumb from '@/components/QuickBreadcrumb/index.vue'
 import AiniTheme from '../AiniTheme/index.vue'
+import MyInput from '../MyInput/index.vue'
 import { Menu } from '@/types/menu'
 import { Tab } from '@/types/tab'
 
@@ -19,6 +20,7 @@ const menuStore = useMenuStore()
 const tabStore = useTabStore()
 
 const themeVisible = ref(false)
+const testInput = ref('')
 
 const isCollapse = computed(() => appStore.getCollapse)
 const bredcrumbData = ref<Array<string>>([])
@@ -116,6 +118,7 @@ const formatBredcrumbData = (currentMenuId: any) => {
 }
 const handleSetting = () => {
   themeVisible.value = true
+  testInput.value = '11111111'
 }
 watch(activeMenuId, (val: string) => {
   formatBredcrumbData(val)
@@ -175,7 +178,10 @@ onMounted(() => {
         <el-icon @click="handleSetting"><Setting /></el-icon>
       </span>
     </div>
-    <AiniTheme v-if="themeVisible" v-model="themeVisible"></AiniTheme>
+    <!-- v-model="themeVisible"   :visible="themeVisible"-->
+    <!-- <AiniTheme v-model="themeVisible"></AiniTheme> -->
+    <my-input v-model="testInput"></my-input>
+    {{ testInput }}
   </div>
 </template>
 

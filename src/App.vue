@@ -6,7 +6,7 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import en from 'element-plus/dist/locale/en.mjs'
 
 const locale = ref(en)
-const zIndex = ref(3000)
+const zIndex = ref(1000) //>=3000时，官方bug
 const size = ref('default')
 const setColor = (setting: any) => {
   const model = setting.model

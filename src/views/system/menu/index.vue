@@ -39,24 +39,6 @@ const tableToolbar = reactive<Toolbar>({
 /**
  * 操作栏
  */
-const handleEdit = (item: Menu, done: any) => {
-  const form = { ...item }
-  if (!form.pId) {
-    form.pId = ''
-  } else {
-    form.pId = form.pId.toString()
-  }
-  done(form)
-}
-const handleDetail = (item: Menu, done: any) => {
-  const form = { ...item }
-  if (!form.pId) {
-    form.pId = ''
-  } else {
-    form.pId = form.pId.toString()
-  }
-  done(form)
-}
 const handleDelete = (item: Menu, done: any) => {
   ElMessageBox.confirm(`你真的删除【${item.menuName}】的菜单吗？`, '警告', {
     confirmButtonText: '确定',
@@ -205,7 +187,7 @@ const formModel = reactive<Menu>({
   pId: '0',
   link: 0,
   linkUrl: '',
-  enabled:true,
+  enabled: true,
   status: true,
 })
 const formItems = reactive<Array<FormItem>>([
@@ -398,7 +380,5 @@ const handleFormSubmit = (form: Menu, done: any) => {
     @on-load="load"
     @on-form-submit="handleFormSubmit"
     @on-delete="handleDelete"
-    @on-edit="handleEdit"
-    @on-detail="handleDetail"
   ></quick-crud>
 </template>

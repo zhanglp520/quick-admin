@@ -15,12 +15,15 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import en from 'element-plus/dist/locale/en.mjs'
 import { v4 as uuid } from 'uuid'
 
-const props = defineProps(['modelValue'])
+const props = defineProps(['modelValue', 'visible'])
 const emit = defineEmits(['update:modelvalue'])
-
-const { modelValue } = toRefs(props) as {
+console.log('props', props)
+const { modelValue, visible } = toRefs(props) as {
   modelValue: Ref<boolean>
+  visible: Ref<boolean>
 }
+console.log('visible', visible.value)
+
 console.log('modelValue', modelValue.value)
 const themeVisible = ref(modelValue.value)
 const updateModel = (visible: boolean) => {
@@ -124,7 +127,7 @@ const bgthemeOptions = ref([
 ])
 const settingForm = reactive({
   lang: 'en',
-  zIndex: 3000,
+  zIndex: 1000, //>=3000时，官方bug
   namespace: 'el',
   size: 'default',
   model: 'light',
@@ -259,6 +262,8 @@ watch(
 //   }
 // )
 onMounted(() => {
+  console.log('onMounted')
+
   const settingStr = localStorage.getItem('setting')
   if (!settingStr) {
     localStorage.setItem('setting', JSON.stringify(settingForm))

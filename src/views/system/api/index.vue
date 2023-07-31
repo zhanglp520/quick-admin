@@ -8,7 +8,7 @@ import {
   Page,
   Actionbar,
   Toolbar,
-PermissionButton,
+  PermissionButton,
 } from '@ainiteam/quick-vue3-ui'
 import { validatePermission } from '@/utils'
 import { Api, SearchApi } from '@/types/api'
@@ -24,10 +24,10 @@ import {
 /**
  * 属性
  */
- const userStore = useUserStore()
+const userStore = useUserStore()
 const loading = ref(false)
 const dataList = reactive<Array<Api>>([])
-  const permissionBtn = computed<PermissionButton>(() => {
+const permissionBtn = computed<PermissionButton>(() => {
   return userStore.getPermissionBtns as PermissionButton
 })
 
@@ -233,7 +233,7 @@ const formItems = reactive<Array<FormItem>>([
     placeholder: '接口地址,例如：/api/v2/system/depts',
     prop: 'apiPath',
     rules: [
-    {
+      {
         required: true,
         message: '接口地址不能为空',
         trigger: 'blur',

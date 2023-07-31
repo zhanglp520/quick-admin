@@ -38,8 +38,8 @@ export const selectTreeFormat = (data: any, options: SelectTreeOptions) => {
     options && options.children ? options.children : defaultOptions.children
   data.forEach((element: SelectTree) => {
     const obj: SelectTree = {
-      label: element[label].toString(),
-      value: element[value].toString(),
+      label: element[label],
+      value: element[value],
       children: [],
     }
     if (element[children] && element[children].length > 0) {
